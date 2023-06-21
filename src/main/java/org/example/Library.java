@@ -7,8 +7,9 @@ public class Library {
     private ArrayList<Book> library;
     private int capacity;
 
-    public Library(ArrayList<Book> listOfBooks){
-        this.library = listOfBooks;
+    public Library(ArrayList<Book> library){
+        this.library = library;
+//        this.library = new ArrayList<>();
         this.capacity = 10;
     }
 
