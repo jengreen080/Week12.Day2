@@ -39,4 +39,21 @@ public class LibraryTest {
         library.addBook(new Book("Pachinko", "Min Jin Lee", "fiction"));
         assertEquals(5, library.getNumberOfBooksInLibrary());
     }
+
+    @Test
+    public void canAddBookIfLibraryAtLessThanCapacity(){
+        library.addBookIfLibraryAtLessThanCapacity(new Book("Pachinko", "Min Jin Lee", "fiction"));
+        assertEquals(5, library.getNumberOfBooksInLibrary());
+    }
+    @Test
+    public void canNotAddBookIfLibraryAtCapacity(){
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+        library.addBook(book4);
+        library.addBook(book2);
+        library.addBookIfLibraryAtLessThanCapacity(new Book("Pachinko", "Min Jin Lee", "fiction"));
+        assertEquals(10, library.getNumberOfBooksInLibrary());
+    }
 }
